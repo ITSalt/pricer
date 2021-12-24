@@ -1,0 +1,61 @@
+html, body, .container {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.main {
+  text-align: left;
+}
+
+@media all and (min-width: 300px) {
+  .aside {flex: 1 0 0; text-align: left;}
+  .aside-1 {
+    margin-left: 10%
+  }
+
+}
+
+@media all and (max-width: 800px) {
+.aside-1 {
+    margin-left: 0%
+  }
+
+}
+
+body {
+  padding: 2em; 
+}
+
+input {
+  margin: 0.5em;
+  font-size: 1em;
+  width: 4em;
+}
+
+.big {
+  font-size: 1.5em;
+}
