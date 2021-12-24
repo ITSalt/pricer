@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "Сравнение ценников и выбор более выгодного предложения",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "icon-100.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    }
+  ],
+  "name": "Pricer",
+  "short_name": "Pricer",
+  "start_url": "https://pricer.itsalt.ru"
+}
