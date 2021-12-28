@@ -48,8 +48,8 @@ const afterLoad = () => {
 
   // Code to handle install prompt on desktop
   let deferredPrompt;
-  const addBtn = document.querySelector('.add-button');
-  addBtn.style.display = 'none';
+  const divInstall = $$('#installContainer');
+  const butInstall = $$('#butInstall');
 
   window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -57,11 +57,11 @@ const afterLoad = () => {
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
     // Update UI to notify the user they can add to home screen
-    addBtn.style.display = 'block';
+    divInstall.classList.toggle('hidden', false);
 
-    addBtn.addEventListener('click', () => {
+    butInstall.addEventListener('click', () => {
       // hide our user interface that shows our A2HS button
-      addBtn.style.display = 'none';
+      divInstall.classList.toggle('hidden', true);
       // Show the prompt
       deferredPrompt.prompt();
       // Wait for the user to respond to the prompt
