@@ -4,9 +4,9 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <title>Pricer - сравнение ценников by ITSalt</title>
   <meta property="og:title" content="Pricer - сравнение ценников" />
   <meta property="og:site_name" content="Pricer" />
@@ -19,7 +19,8 @@
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:url" content="https://pricer.itsalt.ru" />
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='bootstrap.min.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main2.css'>
   <script src='main.js?v=2'></script>
   <link rel="manifest" href="manifest.webmanifest">
 
@@ -46,42 +47,77 @@
 </head>
 
 <body>
-  <div id="installContainer" class="hidden">
-    <button id="butInstall" type="button">
-      Нажми, чтобы добавить иконку и запускать как приложеньку
-    </button>
-    <button onclick="$$('#installContainer').classList.toggle('hidden', true);">Закрыть окошко</button>
-  </div>
-  
   <div class="container">
-    <div class="wrapper">
-      <header class="header">
-        <h1>Pricer - cравнивалка ценников</h1>
-      </header>
-      <aside class="aside aside-1">
+    <div class="row justify-content-center hidden" id="installContainer">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 col-xxl-6">
+        <div class="hstack gap-2">
+          <button id="butInstall" type="button" class="btn btn-primary">
+            Нажми, чтобы добавить иконку и запускать как приложеньку
+          </button>
+          <div class="vr"></div>
+          <button class="btn btn-secondary" onclick="$$('#installContainer').classList.toggle('hidden', true);">Закрыть
+            окошко</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h1 class="text-center">Pricer - cравнивалка ценников</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
         <h2>Первый ценник</h2>
-        <input type="number" pattern="\d*" id="txtMoney"><label for="txtMoney">денег за</label><br>
-        <input type="number" pattern="\d*" id="txtValue"><label for="txtValue">грамм\мл</label><br>
-        <div id="txtChecks"></div>
-      </aside>
-      <aside class="aside aside-2">
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" pattern="\d*" placeholder="Сумма" aria-label="Сумма"
+            aria-describedby="txtMoneyLabel" id="txtMoney">
+          <span class="input-group-text" id="txtMoneyLabel">денег за</span>
+        </div>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" pattern="\d*" placeholder="Вес"
+            aria-label="Вес" aria-describedby="txtValueLabel" id="txtValue">
+          <span class="input-group-text" id="txtValueLabel">грамм\мл</span>
+        </div>
+        <h5 id="txtChecks"></h5>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
         <h2>Второй ценник</h2>
-        <input type="number" pattern="\d*" id="txtMoney2"><label for="txtMoney2">денег за</label><br>
-        <input type="number" pattern="\d*" id="txtValue2"><label for="txtValue2">грамм\мл</label>
-        <div id="txtChecks2"></div>
-      </aside>
-      <footer class="footer">
-        <h2 id="resume"></h2>
-      </footer>
-      <iframe
-        src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B7%D0%B0%20pricer&targets-hint=&default-sum=50&button-text=13&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=4100115169587679&"
-        width="50%" height="222" frameborder="0" allowtransparency="true" scrolling="no" id="umoney"
-        style="visibility: hidden;"></iframe>
-      <footer class="footer">
-        <div class="ya-share2" data-curtain data-size="l" data-shape="round"
-          data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype,reddit"></div>
-          <div>Пожелания, дополнения, баги и спасибки - <a href="mailto:mnikitin@itsalt.ru">Максим Никитин</a>. </div>
-      </footer>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" pattern="\d*" placeholder="Сумма" aria-label="Сумма"
+            aria-describedby="txtMoney2Label" id="txtMoney2">
+          <span class="input-group-text" id="txtMoney2Label">денег за</span>
+        </div>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" pattern="\d*" placeholder="Вес" aria-label="Вес"
+            aria-describedby="txtValue2Label" id="txtValue2">
+          <span class="input-group-text" id="txtValue2Label">грамм\мл</span>
+        </div>
+        <h5 id="txtChecks2"></h5>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
+        <h3 id="resume" style="text-align: center;"></h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 col-xxl-6">
+            <iframe
+              src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B2%D0%BE%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B7%D0%B0%20pricer&targets-hint=&default-sum=50&button-text=13&payment-type-choice=on&hint=&successURL=&quickpay=shop&account=4100115169587679&"
+              width="100%" height="222" frameborder="0" allowtransparency="true" scrolling="no" id="umoney"
+              style="visibility: hidden;"></iframe>
+          </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 col-xxl-6 ya-share2 center text-center" data-curtain data-size="l"
+        data-shape="round" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype,reddit"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 col-xxl-6 text-center">
+        Пожелания, дополнения, баги и спасибки - <a href="mailto:mnikitin@itsalt.ru">Максим Никитин</a>.
+      </div>
     </div>
   </div>
 

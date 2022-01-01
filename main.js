@@ -18,7 +18,7 @@ const changeMe = (e) => {
 
   if (val.price && val.value) {
     sums[`money${addToName}`] = +(val.price / val.value * 1000).toFixed(2);
-    minds.push(`<span class="big">${sums[`money${addToName}`].toLocaleString()}</span><label> денег за кг\\л</label>`);
+    minds.push(`<span class="badge bg-primary">${sums[`money${addToName}`].toLocaleString()}</span> денег за кг\\л`);
   }
 
   let compareText = "";

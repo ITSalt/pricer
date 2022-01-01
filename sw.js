@@ -8,7 +8,8 @@ self.addEventListener('install', function (event) {
     await cache.addAll([
       new Request("index.html", { cache: 'reload' }),
       new Request("main.js", { cache: 'reload' }),
-      new Request("main.css", { cache: 'reload' })
+      new Request("bootstrap.min.css", { cache: 'reload' }),
+      new Request("main2.css", { cache: 'reload' })
     ]);
   })());
 
